@@ -112,18 +112,12 @@ export const WorkflowLoopShowcase: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <p className="text-xs font-mono text-indigo-600 dark:text-indigo-400 mb-3">
-            Continuous Workflow Walkthrough · Auto-Looping Preview
-          </p>
           <h2
             id="workflows-heading"
             className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white text-balance"
           >
             One local workspace for collections, test scenarios, and Markdown notes.
           </h2>
-          <p className="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-            Watch how APITester replaces fragmented cloud workspaces with a single repository-first loop. Select any workflow stage below or let the continuous loop play through.
-          </p>
         </div>
 
         {/* Vendo-Inspired 12-Column Split: 5-Col Chapter Controls + 7-Col Looping Video Player */}

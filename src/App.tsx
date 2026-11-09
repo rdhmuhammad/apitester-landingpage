@@ -8,9 +8,6 @@ import {
   Download,
   Copy,
   Check,
-  Sparkles,
-  Moon,
-  Sun,
   ExternalLink,
   FolderGit2,
 } from 'lucide-react';
@@ -24,8 +21,8 @@ import { FeaturesBentoSection } from './components/FeaturesBentoSection';
 import { DownloadAndOpenSourceSection } from './components/DownloadAndOpenSourceSection';
 
 export default function App() {
-  const [isDark, setIsDark] = useState<boolean>(false);
-  const [bgVariant, setBgVariant] = useState<ReactBitsVariant>('squares');
+  const [isDark] = useState<boolean>(false);
+  const [bgVariant] = useState<ReactBitsVariant>('squares');
   const [copiedHeroCmd, setCopiedHeroCmd] = useState<boolean>(false);
   const [downloadStatusMessage, setDownloadStatusMessage] = useState<string | null>(
     null
@@ -68,12 +65,29 @@ export default function App() {
       {/* ================= STRICT 3-ZONE TOP BAR CONTRACT ================= */}
       <header className="sticky top-0 z-40 backdrop-blur-md bg-white/85 dark:bg-slate-950/85 border-b border-slate-200 dark:border-slate-800/80">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-8 px-6 py-4">
-          {/* Zone 1: Single text element wordmark */}
+          {/* Zone 1: Brand logo + banner-styled wordmark */}
           <a
             href="#"
-            className="text-lg font-extrabold tracking-tight text-indigo-600 dark:text-indigo-400 whitespace-nowrap shrink-0 font-display"
+            className="inline-flex items-center gap-2.5 text-2xl font-bold italic tracking-tight text-[#7600FF] dark:text-[#9d4edd] whitespace-nowrap shrink-0"
+            style={{ fontFamily: "'Poppins', 'Plus Jakarta Sans', sans-serif" }}
           >
-            apitester
+            <img
+              src="/assets/aistudio/AppLogo_7d575aa3.svg"
+              alt="Apitester Logo"
+              className="w-8 h-8 object-contain shrink-0"
+            />
+            <span className="relative inline-flex items-center">
+              Apitester
+              <svg
+                viewBox="0 0 24 20"
+                aria-hidden="true"
+                className="w-3.5 h-3.5 -mt-3 ml-0.5 text-[#FFA0A0] fill-current shrink-0"
+              >
+                <rect x="2" y="2" width="3.5" height="10" rx="1.75" transform="rotate(18 4 7)" />
+                <rect x="9" y="5" width="3.5" height="11" rx="1.75" transform="rotate(48 11 10)" />
+                <rect x="12" y="12" width="3.5" height="11" rx="1.75" transform="rotate(78 14 17)" />
+              </svg>
+            </span>
           </a>
 
           {/* Zone 2: 4–5 concise single-line text navigation links */}
@@ -133,7 +147,7 @@ export default function App() {
           <ReactBitsBackground variant={bgVariant} isDark={isDark} />
 
           <div className="relative z-10 max-w-7xl mx-auto px-6">
-            {/* Top Utility Bar inside Hero: ReactBits Background Switcher & Page Theme Toggle */}
+            {/* Top Utility Bar inside Hero */}
             <div className="flex flex-wrap items-center justify-between gap-4 mb-10 pb-4 border-b border-slate-200/70 dark:border-slate-800/70 text-xs">
               <div className="flex flex-wrap items-center gap-2 text-slate-600 dark:text-slate-400">
                 <span className="font-semibold text-indigo-600 dark:text-indigo-400">
@@ -146,64 +160,22 @@ export default function App() {
                 <span aria-hidden="true">·</span>
                 <span>MIT Open Source</span>
               </div>
-
-              {/* Interactive Controls for ReactBits Background & Page Theme */}
-              <div className="flex flex-wrap items-center gap-2">
-                <div className="flex items-center gap-1 p-1 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <Sparkles className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400 ml-1.5 mr-1" />
-                  {(
-                    [
-                      { id: 'squares', label: 'Grid Motion' },
-                      { id: 'aurora', label: 'Indigo Aurora' },
-                      { id: 'dots', label: 'Dot Matrix' },
-                    ] as const
-                  ).map((preset) => (
-                    <button
-                      key={preset.id}
-                      type="button"
-                      onClick={() => setBgVariant(preset.id)}
-                      className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
-                        bgVariant === preset.id
-                          ? 'bg-white dark:bg-indigo-600 text-indigo-700 dark:text-white shadow-xs'
-                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                      }`}
-                    >
-                      {preset.label}
-                    </button>
-                  ))}
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => setIsDark((d) => !d)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 font-medium hover:border-indigo-500 transition-colors whitespace-nowrap shrink-0 cursor-pointer"
-                >
-                  {isDark ? (
-                    <>
-                      <Sun className="w-3.5 h-3.5 text-amber-400" />
-                      <span>Light Page</span>
-                    </>
-                  ) : (
-                    <>
-                      <Moon className="w-3.5 h-3.5 text-indigo-600" />
-                      <span>Dark Page</span>
-                    </>
-                  )}
-                </button>
-              </div>
             </div>
 
             {/* Vendo-Style Centered / High-Impact Hero Copy */}
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h1
                 className="font-display font-extrabold tracking-tight text-slate-900 dark:text-white text-balance"
-                style={{ fontSize: 'clamp(2.35rem, 4.5vw, 3.85rem)', lineHeight: 1.08 }}
+                style={{ fontSize: 'clamp(2.25rem, 4.3vw, 3.65rem)', lineHeight: 1.1 }}
               >
-                Your API collections and Markdown docs, right inside your Git repo.
+                <span className="block">Less shenanigans, more nap time.</span>
+                <span className="block mt-1 text-[#7600FF] dark:text-indigo-400">
+                  Automate repetitive API testing once and for all.
+                </span>
               </h1>
 
-              <p className="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                APITester is a fast, Git-native alternative to Postman for Windows (macOS soon). Open any repository folder as a project to navigate multiple collection files, interpolate environment variables, and write Obsidian-style <code className="font-mono text-sm text-indigo-600 dark:text-indigo-400">.md</code> notes with clickable endpoint links.
+              <p className="mt-5 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                Stop spending 10 minutes hand-crafting massive nested JSON payloads every time you finish an endpoint. Apitester extracts collection specs directly from your source code controllers, autofills mock payloads with environment variables, and runs multi-step <code className="font-mono text-sm text-indigo-600 dark:text-indigo-400">.http</code> test scenarios in a zero-setup desktop GUI powered by embedded BoltDB—so you can focus on real engineering challenges.
               </p>
 
               {/* Vendo-Style Primary Download CTA + One-Line Clone Command */}
@@ -296,30 +268,6 @@ export default function App() {
           </div>
 
           <div className="flex flex-wrap items-center gap-6">
-            <a
-              href="#playground"
-              className="hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Interactive UI
-            </a>
-            <a
-              href="#workflows"
-              className="hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Workflow Loop
-            </a>
-            <a
-              href="#ecosystem"
-              className="hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Ecosystem
-            </a>
-            <a
-              href="#roadmap"
-              className="hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Roadmap
-            </a>
             <a
               href="https://github.com/rdhmuhammad/apitester"
               target="_blank"

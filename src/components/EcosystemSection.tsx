@@ -346,9 +346,6 @@ export const EcosystemSection: React.FC<EcosystemSectionProps> = ({
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div className="max-w-3xl">
-            <p className="text-xs font-mono text-indigo-600 dark:text-indigo-400 mb-3">
-              End-to-End API Ecosystem · React Flow Architecture
-            </p>
             <h2
               id="ecosystem-heading"
               className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white text-balance"

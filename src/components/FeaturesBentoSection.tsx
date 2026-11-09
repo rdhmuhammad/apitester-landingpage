@@ -196,18 +196,12 @@ export const FeaturesBentoSection: React.FC = () => {
         {/* Section Header + Live Checklist Summary */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-slate-200 dark:border-slate-800">
           <div className="max-w-2xl">
-            <p className="text-xs font-mono text-indigo-600 dark:text-indigo-400 mb-3">
-              Interactive Release Timeline · Scroll-Driven Progress
-            </p>
             <h2
               id="roadmap-heading"
               className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white text-balance"
             >
               Feature Roadmap &amp; Completion Checklist
             </h2>
-            <p className="mt-3 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-              Track what is already shipped and what is currently in progress. You can also click any checkbox below to preview milestone completion states.
-            </p>
           </div>
 
           {/* Unboxed Tabular Checklist Progress Indicator */}
