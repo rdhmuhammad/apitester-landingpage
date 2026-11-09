@@ -1,0 +1,6 @@
+{
+  "name": "APITester — Git-Native API Client & Markdown Workspace",
+  "description": "Landing page and interactive playground for APITester, an open-source Git-native API client and Obsidian-style Markdown workspace for Windows and macOS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
